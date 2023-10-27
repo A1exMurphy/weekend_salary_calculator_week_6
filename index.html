@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <script defer src="script.js"></script>
   <link rel="stylesheet" href="style.css">
   <title>Salary Calculator</title>
 </head>
@@ -12,30 +13,39 @@
   <main>
     <h2>Add Employee</h2>
       <form>
-        <input
+        <input data-testid="firstNameInput"
         placeholder="First Name"
         type="text"
+        id="getFname"
         >
-        <input
+        <input data-testid="lastNameInput"
         placeholder="Last Name"
         type="text"
+        id="getLname"
         >
-        <input
+        <input data-testid="idInput"
         placeholder="ID"
         type="number"
+        id="getId"
         >
-        <input
+        <input data-testid="titleInput"
         placeholder="Title"
-        type=
+        type="text"
+        id="getTitle"
         >
-        <input
+        <input data-testid="annualSalaryInput"
         placeholder="Annual Salary"
         type="number"
+        id="getSalary"
         >
        
       </form> 
+      <!-- should Title column have a data type? -->
       <!-- does the button need to be w/i the form to pull inputs -->
-      <button>Submit</button> 
+      <button onclick="submitButton(event)" data-testid="submitButton">
+        Submit
+      </button> 
+
     <h2>Employees</h2>
       <table>
         <tr>
