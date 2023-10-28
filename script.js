@@ -5,13 +5,13 @@ function onReady() {
 }
 
 function removeEmployee(event) {
-event.target.parentElement.remove()
+event.target.parentElement.parentElement.remove()
 };
 
 function submitButton(event) {
     console.log('trying to button');
     event.preventDefault();
-    
+
     let getFname = document.getElementById(`getFname`).value;
     let getLname = document.getElementById(`getLname`).value;
     let getId = document.getElementById(`getId`).value;
@@ -38,7 +38,7 @@ function submitButton(event) {
             <td>${getTitle}</td>
             <td>${getSalary}</td>
             <td>
-                
+                <button onclick='removeEmployee(event)'>👋</button>
                 </td>
         </tr>
         `
