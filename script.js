@@ -1,5 +1,9 @@
 onReady();
 
+let monthlyCost = 0
+
+console.log(monthlyCost);
+
 function onReady() {
     console.log('Javascript is working!');
 }
@@ -12,7 +16,8 @@ function submitButton(event) {
     console.log('trying to button');
     event.preventDefault();
 
-    let getFname = document.getElementById(`getFname`).value;
+    let missing = `missing`
+    let getFname = document.getElementById(`getFname`).value ?? missing;
     let getLname = document.getElementById(`getLname`).value;
     let getId = document.getElementById(`getId`).value;
     let getTitle = document.getElementById(`getTitle`).value;
@@ -42,5 +47,19 @@ function submitButton(event) {
                 </td>
         </tr>
         `
-    console.log(getFname, getLname, getId, getTitle, getSalary);
-}
+
+        //create a monthly cost variable and add this employee to it
+        let monthlySalary = (getSalary/12)
+        monthlyCost += monthlySalary
+    //   console.log(getFname, getLname, getId, getTitle, getSalary, monthlySalary);  
+        
+
+        document.getElementById(`costMonthly`).textContent = monthlyCost
+
+        if (monthlyCost > 20000) {
+            let budget = document.querySelector(`footer`);
+            budget.classList.add(`over-budget`);
+        }
+
+
+} 
